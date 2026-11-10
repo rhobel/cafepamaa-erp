@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAMAA Moodboard</title>
+<style>
+  :root {
+    /* Brand (from logo) */
+    --brand: #F6C21C;
+    --brand-hover: #E8B30E;
+    --brand-50: #FFFAE8;
+    --brand-100: #FFF2C2;
+    --brand-ink: #111111;
+
+    /* Neutrals — enterprise grey scale */
+    --gray-950: #111111;
+    --gray-900: #18181B;
+    --gray-700: #3F3F46;
+    --gray-500: #71717A;
+    --gray-400: #A1A1AA;
+    --gray-300: #D4D4D8;
+    --gray-200: #E4E4E7;
+    --gray-100: #F1F1F3;
+    --gray-50:  #F8F8F9;
+    --white: #FFFFFF;
+
+    /* Semantic */
+    --success: #16A34A; --success-50: #EAF7EE;
+    --danger:  #DC2626; --danger-50:  #FDECEC;
+    --info:    #2563EB; --info-50:    #EBF1FD;
+
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+    --r-sm: 8px; --r-md: 12px; --r-lg: 16px;
+    --shadow-xs: 0 1px 2px rgba(16,24,40,.05);
+    --shadow-sm: 0 1px 3px rgba(16,24,40,.08), 0 1px 2px rgba(16,24,40,.04);
+    --shadow-md: 0 8px 24px -6px rgba(16,24,40,.10), 0 2px 6px rgba(16,24,40,.05);
+    --ring: 0 0 0 4px rgba(246,194,28,.30);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font); background: var(--gray-50); color: var(--gray-900); font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 40px 16px 72px; }
+
+  /* ---------- Page header ---------- */
+  .page-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; padding-bottom: 28px; border-bottom: 1px solid var(--gray-200); }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--gray-500); }
+  .page-head h1 { font-size: 34px; letter-spacing: -.02em; margin: 6px 0 6px; }
+  .page-head p { margin: 0; color: var(--gray-500); max-width: 60ch; }
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo-mark { width: 44px; height: 44px; border-radius: 12px; background: var(--gray-950); display: grid; place-items: center; }
+  .logo-mark i { width: 20px; height: 20px; border-radius: 50%; background: var(--brand); border: 3px solid var(--white); display: block; }
+  .logo b { font-size: 18px; letter-spacing: .02em; display: block; }
+  .logo span { color: var(--gray-500); font-size: 13px; }
+
+  section { margin-top: 48px; }
+  .sec-title { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
+  .sec-title h2 { font-size: 18px; margin: 0; letter-spacing: -.01em; }
+  .sec-title span { color: var(--gray-500); font-size: 13px; }
+
+  .panel { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--r-lg); box-shadow: var(--shadow-xs); }
+  .pad { padding: 24px; }
+  .grid { display: grid; gap: 16px; }
+
+  /* ---------- Palette ---------- */
+  .palette { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  .sw { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--r-md); overflow: hidden; }
+  .sw .c { height: 84px; border-bottom: 1px solid var(--gray-200); }
+  .sw .m { padding: 10px 12px; }
+  .sw b { font-size: 13px; display: block; }
+  .sw code { font-family: var(--mono); font-size: 12px; color: var(--gray-500); }
+  .sw small { display: block; color: var(--gray-400); font-size: 12px; }
+
+  /* ---------- Type ---------- */
+  .type-row { display: grid; grid-template-columns: 140px 1fr; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--gray-100); }
+  .type-row:last-child { border-bottom: 0; }
+  .type-row code { font-family: var(--mono); font-size: 12px; color: var(--gray-500); }
+
+  /* ---------- Components ---------- */
+  .btn { font: inherit; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 10px; border: 1px solid var(--gray-200); background: var(--white); color: var(--gray-900); box-shadow: var(--shadow-xs); cursor: pointer; }
+  .btn:hover { background: var(--gray-50); }
+  .btn:focus-visible { outline: none; box-shadow: var(--ring); }
+  .btn-primary { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+  .btn-primary:hover { background: var(--brand-hover); }
+  .btn-dark { background: var(--gray-950); border-color: var(--gray-950); color: var(--white); }
+  .btn-dark:hover { background: var(--gray-700); }
+  .btn-danger { color: var(--danger); }
+  .btn[disabled] { background: var(--gray-100); color: var(--gray-400); border-color: var(--gray-200); box-shadow: none; cursor: not-allowed; }
+  .btn svg { width: 16px; height: 16px; }
+  .icon-btn { width: 40px; padding: 0; justify-content: center; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .divider-v { width: 1px; height: 28px; background: var(--gray-200); }
+
+  .toggle { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; }
+  .switch { width: 40px; height: 22px; border-radius: 999px; background: var(--brand); position: relative; }
+  .switch::after { content: ""; position: absolute; right: 3px; top: 3px; width: 16px; height: 16px; border-radius: 50%; background: var(--white); box-shadow: var(--shadow-sm); }
+  .switch.off { background: var(--gray-300); }
+  .switch.off::after { right: auto; left: 3px; }
+
+  .badge { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 8px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .b-ok { background: var(--success-50); color: var(--success); }
+  .b-busy { background: var(--danger-50); color: var(--danger); }
+  .b-bill { background: var(--brand-100); color: #8A6A00; }
+  .b-gray { background: var(--gray-100); color: var(--gray-700); }
+  .delta { display: inline-flex; align-items: center; gap: 2px; padding: 2px 6px; border-radius: 6px; font-size: 12px; font-weight: 600; background: var(--success-50); color: var(--success); }
+  .delta.down { background: var(--danger-50); color: var(--danger); }
+
+  .input { display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; border: 1px solid var(--gray-200); border-radius: 10px; background: var(--white); box-shadow: var(--shadow-xs); color: var(--gray-400); min-width: 260px; }
+  .input.focus { border-color: var(--brand); box-shadow: var(--ring); color: var(--gray-900); }
+  .kbd { margin-left: auto; font-size: 11px; border: 1px solid var(--gray-200); border-radius: 5px; padding: 1px 6px; background: var(--white); color: var(--gray-500); }
+  .lbl { font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--gray-700); }
+
+  .cb { width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid var(--gray-300); background: var(--white); display: inline-grid; place-items: center; flex: none; }
+  .cb.on { background: var(--brand); border-color: var(--brand); }
+  .cb.on::after { content: ""; width: 5px; height: 9px; border: solid var(--brand-ink); border-width: 0 2px 2px 0; transform: rotate(45deg) translate(-1px,-1px); }
+
+  /* ---------- App shell preview ---------- */
+  .shell { display: grid; grid-template-columns: 260px 1fr; border: 1px solid var(--gray-200); border-radius: 20px; overflow: hidden; background: var(--gray-50); box-shadow: var(--shadow-md); }
+  .side { padding: 16px; border-right: 1px solid var(--gray-200); background: var(--gray-50); }
+  .org { display: flex; align-items: center; gap: 10px; padding: 12px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--r-md); box-shadow: var(--shadow-xs); }
+  .org .logo-mark { width: 36px; height: 36px; border-radius: 10px; }
+  .org .logo-mark i { width: 16px; height: 16px; border-width: 2px; }
+  .org b { display: block; font-size: 14px; }
+  .org small { color: var(--gray-500); }
+  .side .input { min-width: 0; margin: 14px 0 6px; background: var(--gray-100); box-shadow: none; border-color: transparent; }
+  .nav-h { font-size: 11px; font-weight: 600; letter-spacing: .08em; color: var(--gray-400); margin: 18px 8px 6px; }
+  .nav a { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 10px; color: var(--gray-700); text-decoration: none; font-weight: 500; position: relative; }
+  .nav a svg { width: 18px; height: 18px; color: var(--gray-500); }
+  .nav a:hover { background: var(--gray-100); }
+  .nav a.on { background: var(--white); color: var(--gray-950); font-weight: 600; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200); }
+  .nav a.on svg { color: var(--gray-950); }
+  .nav a.on::before { content: ""; position: absolute; left: -17px; top: 8px; bottom: 8px; width: 3px; border-radius: 0 3px 3px 0; background: var(--brand); }
+  .nav .count { margin-left: auto; font-size: 12px; background: var(--gray-200); color: var(--gray-700); border-radius: 6px; padding: 0 7px; }
+  .nav .count.y { background: var(--brand); color: var(--brand-ink); }
+  .hr { height: 1px; background: var(--gray-200); margin: 14px 0; }
+
+  .main { background: var(--white); border-radius: 18px 0 0 18px; margin: 8px 0 8px 0; border-left: 1px solid var(--gray-200); min-width: 0; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 28px; border-bottom: 1px solid var(--gray-200); }
+  .topbar h3 { margin: 0; font-size: 24px; letter-spacing: -.02em; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 20px 28px 0; }
+  .toolbar .grow { flex: 1; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); margin: 20px 28px 0; border: 1px solid var(--gray-200); border-radius: var(--r-md); box-shadow: var(--shadow-xs); overflow: hidden; }
+  .stat { padding: 18px 20px; border-right: 1px solid var(--gray-200); }
+  .stat:last-child { border-right: 0; }
+  .stat .t { color: var(--gray-500); font-weight: 500; display: flex; align-items: center; gap: 6px; }
+  .stat .v { font-size: 28px; font-weight: 700; letter-spacing: -.02em; margin: 6px 0 4px; }
+  .stat .s { color: var(--gray-400); font-size: 13px; display: flex; gap: 8px; align-items: center; }
+  .info { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid var(--gray-300); display: inline-grid; place-items: center; font-size: 9px; color: var(--gray-400); font-weight: 700; }
+
+  .tbl-wrap { margin: 20px 28px 28px; border: 1px solid var(--gray-200); border-radius: var(--r-md); overflow: auto; box-shadow: var(--shadow-xs); }
+  table { width: 100%; border-collapse: collapse; min-width: 720px; }
+  th { text-align: left; font-weight: 500; color: var(--gray-500); background: var(--gray-50); padding: 12px 16px; border-bottom: 1px solid var(--gray-200); white-space: nowrap; }
+  td { padding: 14px 16px; border-bottom: 1px solid var(--gray-100); white-space: nowrap; }
+  tr:last-child td { border-bottom: 0; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tbody tr:hover { background: var(--gray-50); }
+  tr.sel { background: var(--brand-50) !important; }
+  tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--brand); }
+  .cust b { display: block; font-weight: 600; }
+  .cust small { color: var(--gray-500); }
+  .mono { font-family: var(--mono); font-size: 13px; color: var(--gray-700); }
+
+  /* ---------- Tables & POS ---------- */
+  .two { grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); }
+  .table-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .t { border: 1px solid var(--gray-200); border-radius: var(--r-md); padding: 12px; background: var(--white); box-shadow: var(--shadow-xs); }
+  .t b { font-size: 16px; display: block; margin-bottom: 8px; }
+  .t small { display: block; color: var(--gray-500); font-size: 12px; margin-top: 6px; }
+  .t.busy { border-color: #F5C2C2; }
+  .t.bill { border-color: var(--brand); background: var(--brand-50); }
+
+  .tabs { display: inline-flex; gap: 2px; padding: 3px; background: var(--gray-100); border-radius: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .tab { padding: 6px 12px; border-radius: 8px; font-weight: 500; color: var(--gray-500); }
+  .tab.on { background: var(--white); color: var(--gray-950); box-shadow: var(--shadow-sm); font-weight: 600; }
+  .items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .item { border: 1px solid var(--gray-200); border-radius: var(--r-md); padding: 10px; background: var(--white); box-shadow: var(--shadow-xs); }
+  .item .ph { height: 64px; border-radius: 8px; background: linear-gradient(135deg, var(--brand-100), var(--gray-100)); margin-bottom: 8px; }
+  .item b { display: block; font-weight: 600; }
+  .item .pr { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; font-weight: 600; }
+  .add { width: 28px; height: 28px; border-radius: 8px; border: 0; background: var(--brand); font-weight: 700; font-size: 16px; color: var(--brand-ink); }
+  .item.off { opacity: .5; }
+
+  .invoice { font-family: var(--mono); font-size: 12.5px; max-width: 320px; margin: 0 auto; padding: 20px; border: 1px solid var(--gray-200); border-radius: var(--r-md); background: var(--white); box-shadow: var(--shadow-md); }
+  .invoice h4 { font-family: var(--font); text-align: center; margin: 0; font-size: 18px; letter-spacing: .08em; }
+  .invoice .c { text-align: center; color: var(--gray-500); }
+  .invoice hr { border: 0; border-top: 1px dashed var(--gray-300); margin: 10px 0; }
+  .invoice .l { display: flex; justify-content: space-between; }
+  .invoice .tot { font-weight: 700; font-size: 15px; border-top: 2px solid var(--gray-950); padding-top: 8px; margin-top: 8px; }
+
+  .principles { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .principles h4 { margin: 0 0 8px; }
+  .principles p { margin: 0; color: var(--gray-500); }
+  .dd { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; font-size: 13px; }
+  .dd div { padding: 8px 10px; border-radius: 8px; }
+  .dd .y { background: var(--success-50); color: #146C35; }
+  .dd .n { background: var(--danger-50); color: #9B1C1C; }
+  pre { font-family: var(--mono); font-size: 12px; margin: 0; background: var(--gray-50); padding: 12px; border-radius: 8px; border: 1px solid var(--gray-200); overflow: auto; }
+
+  footer { margin-top: 56px; text-align: center; color: var(--gray-400); font-size: 12px; }
+
+  @media (max-width: 900px) {
+    .shell { grid-template-columns: 1fr; }
+    .side { display: none; }
+    .main { margin: 0; border-radius: 0; border: 0; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stat:nth-child(2) { border-right: 0; }
+    .stat:nth-child(-n+2) { border-bottom: 1px solid var(--gray-200); }
+  }
+  @media (max-width: 560px) {
+    .topbar, .toolbar { padding-left: 16px; padding-right: 16px; }
+    .stats, .tbl-wrap { margin-left: 16px; margin-right: 16px; }
+    .table-grid { grid-template-columns: repeat(3, 1fr); }
+    .items { grid-template-columns: 1fr 1fr; }
+    .type-row { grid-template-columns: 1fr; gap: 4px; }
+    .two { grid-template-columns: 1fr; }
+    .input { min-width: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Header -->
+  <div class="page-head">
+    <div>
+      <div class="eyebrow">Design system · v2 · Enterprise Modern</div>
+      <h1>PAMAA Restaurant Billing</h1>
+      <p>Calm, light and data-first. Neutral greys and soft shadows do the structure; the logo's sun yellow is reserved for focus, selection and the one primary action on each screen.</p>
+    </div>
+    <div class="logo">
+      <div class="logo-mark"><i></i></div>
+      <div><b>PAMAA</b><span>Billing &amp; POS</span></div>
+    </div>
+  </div>
+
+  <!-- Palette -->
+  <section>
+    <div class="sec-title"><h2>Colour</h2><span>Brand from logo · neutrals · semantic</span></div>
+    <div class="grid palette">
+      <div class="sw"><div class="c" style="background:var(--brand)"></div><div class="m"><b>Brand Yellow</b><code>#F6C21C</code><small>Primary action, selection</small></div></div>
+      <div class="sw"><div class="c" style="background:var(--brand-hover)"></div><div class="m"><b>Yellow Hover</b><code>#E8B30E</code><small>Pressed / hover</small></div></div>
+      <div class="sw"><div class="c" style="background:var(--brand-50)"></div><div class="m"><b>Yellow 50</b><code>#FFFAE8</code><small>Selected row</small></div></div>
+      <div class="sw"><div class="c" style="background:var(--gray-950)"></div><div class="m"><b>Ink</b><code>#111111</code><small>Headings, dark button</small></div></div>
+      <div class="sw"><div class="c" style="background:var(--gray-700)"></div><div class="m"><b>Gray 700</b><code>#3F3F46</code><small>Body text</small></div></div>
+      <div class="sw"><div class="c" style="background:var(--gray-500)"></div><div class="m"><b>Gray 500</b><code>#71717A</code><small>Labels, meta</small></div></div>
+      <div class="sw"><div class="c" style="background:var(--gray-200)"></div><div class="m"><b>Gray 200</b><code>#E4E4E7</code><small>Borders</small></div></div>
+      <div class="sw"><div class="c" style="background:var(--gray-50)"></div><div class="m"><b>Gray 50</b><code>#F8F8F9</code><small>App background</small></div></div>
+      <div class="sw"><div class="c" style="background:var(--success)"></div><div class="m"><b>Success</b><code>#16A34A</code><small>Available, growth</small></div></div>
+      <div class="sw"><div class="c" style="background:var(--danger)"></div><div class="m"><b>Danger</b><code>#DC2626</code><small>Occupied, void</small></div></div>
+    </div>
+  </section>
+
+  <!-- Type -->
+  <section>
+    <div class="sec-title"><h2>Typography</h2><span>System font stack · tabular numbers for money</span></div>
+    <div class="panel pad">
+      <div class="type-row"><code>Display 32 / 700</code><span style="font-size:32px;font-weight:700;letter-spacing:-.02em">₹48,250</span></div>
+      <div class="type-row"><code>Page title 24 / 700</code><span style="font-size:24px;font-weight:700;letter-spacing:-.02em">Running Bills</span></div>
+      <div class="type-row"><code>Section 18 / 600</code><span style="font-size:18px;font-weight:600">Table 5 · Ravi Kumar</span></div>
+      <div class="type-row"><code>Body 14 / 400</code><span>Paneer Dosa with extra cheese, less spicy.</span></div>
+      <div class="type-row"><code>Meta 13 / 400</code><span style="font-size:13px;color:var(--gray-500)">vs last week · opened 7:45 PM</span></div>
+      <div class="type-row"><code>Overline 11 / 600</code><span style="font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--gray-400)">MAIN MENU</span></div>
+      <div class="type-row"><code>Mono 13</code><span class="mono">INV/2026-27/00096 · RB-0042</span></div>
+    </div>
+  </section>
+
+  <!-- Components -->
+  <section>
+    <div class="sec-title"><h2>Components</h2><span>Buttons, inputs, badges, controls</span></div>
+    <div class="panel pad">
+      <div class="row">
+        <button class="btn btn-primary">Confirm Order</button>
+        <button class="btn btn-dark">Proceed to Checkout</button>
+        <button class="btn">Cancel</button>
+        <button class="btn btn-danger">Void Item</button>
+        <button class="btn" disabled>Generate Invoice</button>
+        <button class="btn icon-btn" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></button>
+      </div>
+      <div class="hr" style="margin:22px 0"></div>
+      <div class="row">
+        <div>
+          <div class="lbl">Search</div>
+          <div class="input"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search bills, tables…<span class="kbd">⌘ K</span></div>
+        </div>
+        <div>
+          <div class="lbl">Customer mobile</div>
+          <div class="input focus">98765 43210</div>
+        </div>
+      </div>
+      <div class="hr" style="margin:22px 0"></div>
+      <div class="row">
+        <span class="badge b-ok"><span class="dot"></span>Available</span>
+        <span class="badge b-busy"><span class="dot"></span>Occupied</span>
+        <span class="badge b-bill"><span class="dot"></span>Billing</span>
+        <span class="badge b-gray">Paid</span>
+        <span class="delta">↑ 9%</span>
+        <span class="delta down">↓ 3%</span>
+        <div class="divider-v"></div>
+        <span class="toggle">Show statistics <span class="switch"></span></span>
+        <span class="toggle" style="color:var(--gray-500)">Tax inclusive <span class="switch off"></span></span>
+        <span class="cb on"></span><span class="cb"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- App shell -->
+  <section>
+    <div class="sec-title"><h2>App shell — Running Bills</h2><span>Sidebar · toolbar · stats · data table</span></div>
+    <div class="shell">
+      <aside class="side">
+        <div class="org">
+          <div class="logo-mark"><i></i></div>
+          <div><b>PAMAA</b><small>Cashier · Priya</small></div>
+        </div>
+        <div class="input"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search<span class="kbd">⌘ K</span></div>
+
+        <div class="nav-h">MAIN MENU</div>
+        <nav class="nav">
+          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Dashboard</a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h10"/></svg>New Order</a>
+          <a href="#" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"/><path d="M9 7h6M9 11h6"/></svg>Running Bills<span class="count y">7</span></a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Tables</a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Invoices</a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M17 3a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"/></svg>Customers</a>
+        </nav>
+        <div class="hr"></div>
+        <div class="nav-h">ADMIN</div>
+        <nav class="nav">
+          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Reports</a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Menu<span class="count">48</span></a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Settings</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <div class="topbar">
+          <h3>Running Bills</h3>
+          <div class="row">
+            <button class="btn icon-btn" aria-label="Refresh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></button>
+            <button class="btn icon-btn" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></button>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <button class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>Table View ▾</button>
+          <div class="divider-v"></div>
+          <button class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 3H2l8 9.5V19l4 2v-8.5z"/></svg>Filter</button>
+          <button class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 4v16M3 8l4-4 4 4M17 20V4M13 16l4 4 4-4"/></svg>Sort</button>
+          <span class="toggle" style="margin-left:6px">Show statistics <span class="switch"></span></span>
+          <span class="grow"></span>
+          <button class="btn btn-primary">Checkout (2)</button>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><div class="t">Open bills <span class="info">i</span></div><div class="v">7</div><div class="s">now <span class="delta">+2</span></div></div>
+          <div class="stat"><div class="t">Running value <span class="info">i</span></div><div class="v">₹3,140</div><div class="s">vs yesterday <span class="delta">↑ 9%</span></div></div>
+          <div class="stat"><div class="t">Sales today <span class="info">i</span></div><div class="v">₹48,250</div><div class="s">vs yesterday <span class="delta">↑ 7%</span></div></div>
+          <div class="stat"><div class="t">Tables in use <span class="info">i</span></div><div class="v">12/20</div><div class="s">peak 18 <span class="delta down">↓ 3%</span></div></div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table>
+            <thead>
+              <tr><th style="width:44px"><span class="cb"></span></th><th>Bill</th><th>Table</th><th>Customer</th><th>Rounds</th><th>Status</th><th>Opened</th><th class="num">Total</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="cb"></span></td><td class="mono">RB-0040</td><td>T3</td><td class="cust"><b>Walk-in</b><small>91234 56780</small></td><td>1</td><td><span class="badge b-busy"><span class="dot"></span>Occupied</span></td><td>7:20 PM</td><td class="num">₹160.00</td></tr>
+              <tr class="sel"><td><span class="cb on"></span></td><td class="mono">RB-0042</td><td>T5</td><td class="cust"><b>Ravi Kumar</b><small>98765 43210</small></td><td>3</td><td><span class="badge b-bill"><span class="dot"></span>Billing</span></td><td>7:45 PM</td><td class="num">₹390.00</td></tr>
+              <tr><td><span class="cb"></span></td><td class="mono">RB-0043</td><td>T2</td><td class="cust"><b>Anitha S</b><small>99001 22334</small></td><td>2</td><td><span class="badge b-busy"><span class="dot"></span>Occupied</span></td><td>8:02 PM</td><td class="num">₹540.00</td></tr>
+              <tr class="sel"><td><span class="cb on"></span></td><td class="mono">RB-0044</td><td>T8</td><td class="cust"><b>Mohammed I</b><small>90080 77665</small></td><td>4</td><td><span class="badge b-bill"><span class="dot"></span>Billing</span></td><td>8:10 PM</td><td class="num">₹1,280.00</td></tr>
+              <tr><td><span class="cb"></span></td><td class="mono">RB-0045</td><td>T11</td><td class="cust"><b>—</b><small>98450 11223</small></td><td>1</td><td><span class="badge b-busy"><span class="dot"></span>Occupied</span></td><td>8:25 PM</td><td class="num">₹90.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <!-- Tables & POS -->
+  <section>
+    <div class="sec-title"><h2>Screens</h2><span>Table layout · POS menu · invoice</span></div>
+    <div class="grid two">
+      <div class="panel pad">
+        <h3 style="margin:0 0 14px;font-size:16px">Table layout</h3>
+        <div class="table-grid">
+          <div class="t"><b>T1</b><span class="badge b-ok"><span class="dot"></span>Free</span><small>4 seats</small></div>
+          <div class="t busy"><b>T2</b><span class="badge b-busy"><span class="dot"></span>Busy</span><small>₹540</small></div>
+          <div class="t busy"><b>T3</b><span class="badge b-busy"><span class="dot"></span>Busy</span><small>₹160</small></div>
+          <div class="t"><b>T4</b><span class="badge b-ok"><span class="dot"></span>Free</span><small>2 seats</small></div>
+          <div class="t bill"><b>T5</b><span class="badge b-bill"><span class="dot"></span>Billing</span><small>₹390</small></div>
+          <div class="t"><b>T6</b><span class="badge b-ok"><span class="dot"></span>Free</span><small>6 seats</small></div>
+          <div class="t"><b>T7</b><span class="badge b-ok"><span class="dot"></span>Free</span><small>4 seats</small></div>
+          <div class="t bill"><b>T8</b><span class="badge b-bill"><span class="dot"></span>Billing</span><small>₹1,280</small></div>
+          <div class="t"><b>T9</b><span class="badge b-ok"><span class="dot"></span>Free</span><small>4 seats</small></div>
+          <div class="t"><b>T10</b><span class="badge b-ok"><span class="dot"></span>Free</span><small>2 seats</small></div>
+        </div>
+      </div>
+
+      <div class="panel pad">
+        <h3 style="margin:0 0 14px;font-size:16px">POS menu</h3>
+        <div class="tabs"><span class="tab on">All</span><span class="tab">Breakfast</span><span class="tab">Snacks</span><span class="tab">Beverages</span></div>
+        <div class="items">
+          <div class="item"><div class="ph"></div><b>Masala Dosa</b><div class="pr">₹80 <button class="add">+</button></div></div>
+          <div class="item"><div class="ph"></div><b>Paneer Dosa</b><div class="pr">₹120 <button class="add">+</button></div></div>
+          <div class="item"><div class="ph"></div><b>Filter Coffee</b><div class="pr">₹30 <button class="add">+</button></div></div>
+          <div class="item off"><div class="ph"></div><b>Idli</b><div class="pr"><span class="badge b-gray">Unavailable</span></div></div>
+          <div class="item"><div class="ph"></div><b>Vada</b><div class="pr">₹40 <button class="add">+</button></div></div>
+          <div class="item"><div class="ph"></div><b>Lassi</b><div class="pr">₹60 <button class="add">+</button></div></div>
+        </div>
+      </div>
+
+      <div class="panel pad" style="display:flex;align-items:center;justify-content:center;background:var(--gray-50)">
+        <div class="invoice">
+          <h4>PAMAA</h4>
+          <div class="c">Bengaluru · GSTIN 29XXXXX</div>
+          <hr>
+          <div class="l"><span>INV/2026-27/00096</span><span>T5</span></div>
+          <div class="l" style="color:var(--gray-500)"><span>10 Nov 2026, 8:41 PM</span><span>Cash+UPI</span></div>
+          <hr>
+          <div class="l"><span>Masala Dosa 2×80</span><span>160.00</span></div>
+          <div class="l"><span>Coffee 3×30</span><span>90.00</span></div>
+          <div class="l"><span>Paneer Dosa 1×140</span><span>140.00</span></div>
+          <hr>
+          <div class="l"><span>Subtotal</span><span>390.00</span></div>
+          <div class="l"><span>Discount 10%</span><span>-39.00</span></div>
+          <div class="l"><span>CGST 2.5%</span><span>8.78</span></div>
+          <div class="l"><span>SGST 2.5%</span><span>8.78</span></div>
+          <div class="l"><span>Round-off</span><span>+0.44</span></div>
+          <div class="l tot"><span>TOTAL</span><span>₹369.00</span></div>
+          <div class="c" style="margin-top:10px">Thank you · Visit again</div>
+        </div>
+      </div>
+
+      <div class="panel pad">
+        <h3 style="margin:0 0 14px;font-size:16px">Design tokens</h3>
+<pre>--brand:      #F6C21C;
+--brand-50:   #FFFAE8;
+--ink:        #111111;
+--gray-500:   #71717A;
+--gray-200:   #E4E4E7;
+--gray-50:    #F8F8F9;
+--success:    #16A34A;
+--danger:     #DC2626;
+
+--radius:     8 / 12 / 16px;
+--shadow-sm:  0 1px 3px rgba(16,24,40,.08);
+--ring:       0 0 0 4px rgba(246,194,28,.30);
+--font:       system-ui, -apple-system,
+              "Segoe UI", Roboto, sans-serif;</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section>
+    <div class="sec-title"><h2>Principles</h2><span>How to apply the system</span></div>
+    <div class="grid principles">
+      <div class="panel pad"><h4>Neutral first</h4><p>Greys, 1px borders and soft shadows carry the layout. Colour only appears where it means something.</p></div>
+      <div class="panel pad"><h4>Yellow = focus</h4><p>Use brand yellow for the single primary action, the active nav marker, selected rows and focus rings — nothing else.</p></div>
+      <div class="panel pad"><h4>Numbers are the hero</h4><p>Large tabular figures, right-aligned money columns, delta chips for change over time.</p></div>
+      <div class="panel pad">
+        <h4>Do / Don't</h4>
+        <div class="dd">
+          <div class="y">Black text on yellow</div><div class="n">White or yellow text on yellow</div>
+          <div class="y">Status as badge + label</div><div class="n">Colour-only status</div>
+          <div class="y">One yellow button per view</div><div class="n">Yellow on every button</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>PAMAA · Restaurant Billing · Enterprise Modern moodboard · Nov 2026</footer>
+</div>
+</body>
+</html>

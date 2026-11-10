@@ -1,0 +1,47 @@
+.dash-scope {
+  margin: 0;
+}
+.dash-h {
+  font-size: 16px;
+  margin: 0 0 12px;
+}
+.dash-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 2fr;
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 1024px) {
+  .dash-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.dash-split {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.dash-split-head {
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.dash-bar {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--gray-100);
+  overflow: hidden;
+}
+.dash-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+.dash-bar-cash {
+  background: var(--success);
+}
+.dash-bar-upi {
+  background: var(--brand);
+}
+.dash-bar-card {
+  background: var(--info);
+}

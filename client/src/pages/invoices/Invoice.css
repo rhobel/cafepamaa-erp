@@ -1,0 +1,264 @@
+/* Invoice view + print. All selectors scoped to .inv- (Vite bundles CSS globally). */
+
+/* ---------- Screen ---------- */
+.inv-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.inv-grow {
+  flex: 1;
+}
+.inv-preview {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  overflow-x: auto;
+}
+
+/* ---------- Document (shared) ---------- */
+.inv-doc {
+  box-sizing: border-box;
+  background: var(--white, #fff);
+  color: #111;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-md, 8px);
+  box-shadow: var(--shadow-md);
+  font-variant-numeric: tabular-nums;
+}
+.inv-doc *,
+.inv-doc *::before,
+.inv-doc *::after {
+  box-sizing: border-box;
+}
+.inv-l {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.inv-n {
+  text-align: right;
+  white-space: nowrap;
+}
+.inv-sub {
+  color: #555;
+}
+.inv-name {
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+.inv-logo {
+  display: block;
+  object-fit: contain;
+}
+.inv-meta {
+  margin: 0;
+}
+.inv-meta dt,
+.inv-meta dd {
+  margin: 0;
+}
+.inv-meta dd {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+.inv-dup {
+  border: 2px solid #111;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+.inv-title {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+.inv-grand {
+  font-weight: 700;
+  border-top: 2px solid #111;
+}
+.inv-h {
+  font-weight: 700;
+}
+.inv-status {
+  font-weight: 700;
+}
+.inv-foot {
+  text-align: center;
+  white-space: pre-line;
+}
+
+/* ---------- 80 mm thermal (moodboard mock) ---------- */
+.inv-80 {
+  width: 80mm;
+  padding: 4mm;
+  font-family: var(--mono, ui-monospace, Menlo, Consolas, monospace);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.inv-80 .inv-head {
+  text-align: center;
+}
+.inv-80 .inv-logo {
+  max-width: 40mm;
+  max-height: 18mm;
+  margin: 0 auto 4px;
+  filter: grayscale(1);
+}
+.inv-80 .inv-name {
+  font-family: var(--font, sans-serif);
+  font-size: 17px;
+}
+.inv-80 .inv-dup {
+  padding: 3px;
+  margin-bottom: 8px;
+}
+.inv-80 .inv-title,
+.inv-80 .inv-meta,
+.inv-80 .inv-items,
+.inv-80 .inv-totals,
+.inv-80 .inv-payments,
+.inv-80 .inv-foot {
+  border-top: 1px dashed #111;
+  margin-top: 6px;
+  padding-top: 6px;
+}
+.inv-80 .inv-item + .inv-item {
+  margin-top: 4px;
+}
+.inv-80 .inv-item .inv-l span:first-child,
+.inv-80 .inv-sub {
+  overflow-wrap: anywhere;
+}
+.inv-80 .inv-item .inv-sub {
+  padding-left: 1ch;
+}
+.inv-80 .inv-grand {
+  font-size: 14px;
+  padding-top: 4px;
+  margin-top: 4px;
+}
+
+/* ---------- A4 ---------- */
+.inv-a4 {
+  width: 210mm;
+  max-width: 100%;
+  padding: 14mm 12mm;
+  font-family: var(--font, sans-serif);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.inv-a4 .inv-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #111;
+}
+.inv-a4 .inv-logo {
+  max-width: 120px;
+  max-height: 70px;
+}
+.inv-a4 .inv-name {
+  font-size: 24px;
+}
+.inv-a4 .inv-dup {
+  padding: 6px;
+  margin-bottom: 14px;
+  font-size: 18px;
+}
+.inv-a4 .inv-title {
+  font-size: 16px;
+  margin: 14px 0;
+}
+.inv-a4 .inv-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 32px;
+}
+.inv-a4 .inv-meta dt {
+  color: #555;
+}
+.inv-a4 .inv-items {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+.inv-a4 .inv-items th,
+.inv-a4 .inv-items td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+  vertical-align: top;
+}
+.inv-a4 .inv-items th {
+  border-bottom: 2px solid #111;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.inv-a4 .inv-items .inv-n {
+  text-align: right;
+}
+.inv-a4 .inv-items tr {
+  break-inside: avoid;
+}
+.inv-a4 .inv-totals {
+  width: 300px;
+  margin: 14px 0 0 auto;
+}
+.inv-a4 .inv-grand {
+  font-size: 16px;
+  margin-top: 6px;
+  padding-top: 6px;
+}
+.inv-a4 .inv-payments {
+  margin-top: 18px;
+  max-width: 300px;
+}
+.inv-a4 .inv-foot {
+  margin-top: 28px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}
+
+/* ---------- Print: only the invoice ---------- */
+@media print {
+  body:has(.inv-page) {
+    background: #fff;
+  }
+  body:has(.inv-page) .side,
+  body:has(.inv-page) .topbar,
+  body:has(.inv-page) .toasts,
+  .no-print {
+    display: none !important;
+  }
+  body:has(.inv-page) .shell,
+  body:has(.inv-page) .main,
+  body:has(.inv-page) .content {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+  .inv-preview {
+    display: block;
+    padding: 0;
+    overflow: visible;
+  }
+  .inv-doc {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    color: #000;
+    width: 100%; /* fill the @page content box: 72 mm on 80 mm paper, so nothing is cut on the right */
+    padding: 0;
+  }
+  .inv-sub,
+  .inv-a4 .inv-meta dt {
+    color: #000;
+  }
+}

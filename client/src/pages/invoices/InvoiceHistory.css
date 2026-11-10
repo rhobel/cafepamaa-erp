@@ -1,0 +1,21 @@
+.ih-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+.ih-actions {
+  display: flex;
+  gap: 8px;
+}
+.ih-customer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ih-customer .muted {
+  font-size: 13px;
+}
+.ih-pager {
+  justify-content: flex-end;
+}

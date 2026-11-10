@@ -1,0 +1,68 @@
+.bd-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.bd-head h2 {
+  margin: 0 0 6px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 18px;
+}
+.bd-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px 24px;
+  margin: 16px 0 0;
+}
+.bd-meta dt {
+  font-size: 12px;
+  color: var(--gray-500);
+}
+.bd-meta dd {
+  margin: 2px 0 0;
+  font-weight: 500;
+}
+.bd-round h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.bd-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid var(--gray-100);
+}
+.bd-item .info {
+  flex: 1;
+  min-width: 0;
+}
+.bd-item .sub {
+  font-size: 13px;
+}
+.bd-item .amt {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+.bd-item.voided .name,
+.bd-item.voided .amt {
+  text-decoration: line-through;
+  color: var(--gray-400);
+}
+.bd-void-reason {
+  color: var(--danger);
+  font-size: 13px;
+}
+.bd-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}

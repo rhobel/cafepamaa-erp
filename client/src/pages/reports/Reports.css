@@ -1,0 +1,56 @@
+.rep-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+.rep-period {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+}
+.rep-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+/* Totals row (always the last row when present). */
+.rep-table tbody tr:last-child td {
+  font-weight: 600;
+  background: var(--gray-50);
+}
+.rep-print-title {
+  display: none;
+}
+
+@media print {
+  body:has(.rep-page) {
+    background: #fff;
+  }
+  body:has(.rep-page) .side,
+  body:has(.rep-page) .topbar,
+  body:has(.rep-page) .toasts,
+  .rep-filters {
+    display: none !important;
+  }
+  body:has(.rep-page) .shell,
+  body:has(.rep-page) .main,
+  body:has(.rep-page) .content {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  .rep-print-title {
+    display: block;
+    margin: 0 0 12px;
+  }
+  .rep-table .tbl-wrap {
+    border: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+  .rep-table td,
+  .rep-table th {
+    padding: 6px 8px;
+  }
+}

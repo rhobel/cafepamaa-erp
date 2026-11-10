@@ -1,0 +1,71 @@
+{
+  "restaurant": {
+    "name": "PAMAA Café",
+    "address": "12, 4th Cross, Indiranagar, Bengaluru 560038",
+    "phone": "080 4123 4567",
+    "gstin": "29ABCDE1234F1Z5",
+    "gstRate": 5,
+    "pricesIncludeTax": false,
+    "invoicePrefix": "INV",
+    "invoiceStartNumber": 1,
+    "invoiceFooter": "Thank you · Visit again",
+    "printFormat": "80mm"
+  },
+  "categories": ["Breakfast", "Dosa", "Meals", "Snacks", "Beverages", "Desserts"],
+  "menuItems": [
+    { "name": "Idli (2 pcs)", "category": "Breakfast", "price": 40, "description": "Steamed rice cakes with sambar and chutney" },
+    { "name": "Vada (2 pcs)", "category": "Breakfast", "price": 50 },
+    { "name": "Idli Vada", "category": "Breakfast", "price": 60 },
+    { "name": "Ven Pongal", "category": "Breakfast", "price": 70, "addOns": [{ "name": "Extra ghee", "price": 15 }] },
+    { "name": "Rava Upma", "category": "Breakfast", "price": 55 },
+    { "name": "Plain Dosa", "category": "Dosa", "price": 60 },
+    {
+      "name": "Masala Dosa",
+      "category": "Dosa",
+      "price": 80,
+      "description": "Crisp dosa with potato palya",
+      "addOns": [
+        { "name": "Ghee roast", "price": 20 },
+        { "name": "Cheese", "price": 30 },
+        { "name": "Extra chutney", "price": 0 }
+      ]
+    },
+    { "name": "Mysore Masala Dosa", "category": "Dosa", "price": "95.00", "addOns": [{ "name": "Cheese", "price": 30 }] },
+    { "name": "Onion Rava Dosa", "category": "Dosa", "price": 100 },
+    { "name": "Set Dosa (3 pcs)", "category": "Dosa", "price": 75 },
+    { "name": "South Indian Meals", "category": "Meals", "price": 140, "description": "Rice, sambar, rasam, 2 palyas, curd, papad, sweet" },
+    { "name": "Curd Rice", "category": "Meals", "price": 80 },
+    { "name": "Bisi Bele Bath", "category": "Meals", "price": 90, "addOns": [{ "name": "Boondi", "price": 10 }] },
+    { "name": "Lemon Rice", "category": "Meals", "price": 70 },
+    { "name": "Mangalore Buns (2 pcs)", "category": "Snacks", "price": 60 },
+    { "name": "Mirchi Bajji", "category": "Snacks", "price": 50 },
+    { "name": "Onion Pakoda", "category": "Snacks", "price": 60, "isAvailable": false },
+    { "name": "Filter Coffee", "category": "Beverages", "price": 30, "addOns": [{ "name": "Strong (double decoction)", "price": 10 }] },
+    { "name": "Masala Tea", "category": "Beverages", "price": 25 },
+    { "name": "Badam Milk", "category": "Beverages", "price": 50 },
+    { "name": "Fresh Lime Soda", "category": "Beverages", "price": "45.50" },
+    { "name": "Buttermilk", "category": "Beverages", "price": 30 },
+    { "name": "Kesari Bath", "category": "Desserts", "price": 45 },
+    { "name": "Gulab Jamun (2 pcs)", "category": "Desserts", "price": 50 },
+    { "name": "Payasam", "category": "Desserts", "price": 60 }
+  ],
+  "tables": [
+    { "tableNumber": "T1", "capacity": 2, "section": "AC Hall" },
+    { "tableNumber": "T2", "capacity": 2, "section": "AC Hall" },
+    { "tableNumber": "T3", "capacity": 4, "section": "AC Hall" },
+    { "tableNumber": "T4", "capacity": 4, "section": "AC Hall" },
+    { "tableNumber": "T5", "capacity": 4, "section": "AC Hall" },
+    { "tableNumber": "T6", "capacity": 6, "section": "AC Hall" },
+    { "tableNumber": "T7", "capacity": 4, "section": "Garden" },
+    { "tableNumber": "T8", "capacity": 4, "section": "Garden" },
+    { "tableNumber": "T9", "capacity": 6, "section": "Garden" },
+    { "tableNumber": "T10", "capacity": 8, "section": "Garden" }
+  ],
+  "users": [
+    { "name": "Priya S", "username": "priya", "role": "cashier", "password": "Change-me-priya1", "maxDiscountPercent": 10 },
+    { "name": "Ravi K", "username": "ravi", "role": "cashier", "password": "Change-me-ravi1", "maxDiscountPercent": 5 },
+    { "name": "Arun M", "username": "arun", "role": "waiter", "password": "Change-me-arun1" },
+    { "name": "Meena R", "username": "meena", "role": "waiter", "password": "Change-me-meena1" },
+    { "name": "Suresh B", "username": "suresh", "role": "waiter", "password": "Change-me-suresh1" }
+  ]
+}

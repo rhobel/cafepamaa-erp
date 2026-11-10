@@ -1,0 +1,236 @@
+/* POS (web-flow §4, moodboard "POS menu") */
+.pos-start {
+  max-width: 520px;
+}
+.pos-search {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.pos-search .field {
+  flex: 1;
+}
+.pos-search .btn {
+  margin-top: 25px; /* align with input under the label */
+}
+.pos-start .input,
+.pos-start .btn {
+  min-height: 48px;
+}
+.pos-notice {
+  background: var(--brand-50);
+  border: 1px solid var(--brand-100);
+  border-radius: var(--r-sm);
+  padding: 10px 12px;
+  font-weight: 600;
+}
+.pos-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.pos-head b {
+  font-size: 16px;
+}
+.pos-head .grow {
+  flex: 1;
+}
+
+/* Menu & cart */
+.pos-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 20px;
+  align-items: start;
+}
+.pos-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 3px;
+  background: var(--gray-100);
+  border-radius: 10px;
+  align-self: flex-start;
+}
+.pos-tabs button {
+  font: inherit;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--gray-500);
+  font-weight: 500;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.pos-tabs button.on {
+  background: var(--white);
+  color: var(--gray-950);
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+}
+.pos-tabs button:focus-visible,
+.pos-item:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+}
+.pos-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+.pos-item {
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-md);
+  padding: 10px;
+  background: var(--white);
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.pos-item:hover:not(:disabled) {
+  border-color: var(--gray-300);
+  box-shadow: var(--shadow-sm);
+}
+.pos-item:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.pos-item b {
+  font-weight: 600;
+  flex: 1;
+}
+.pos-ph {
+  display: block;
+  width: 100%;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--brand-100), var(--gray-100));
+  margin-bottom: 8px;
+}
+.pos-pr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  font-weight: 600;
+}
+.pos-add {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--brand);
+  color: var(--brand-ink);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.pos-cart {
+  padding: 16px;
+  position: sticky;
+  top: 16px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pos-cart h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.pos-cart p {
+  margin: 0;
+}
+.pos-cart .btn-block {
+  min-height: 48px;
+  margin-top: 8px;
+}
+.pos-lines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.pos-lines li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--gray-100);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pos-lines li:last-child {
+  border-bottom: 0;
+}
+.pos-lines .muted {
+  font-size: 13px;
+}
+.pos-lines li.voided > :first-child > :first-child {
+  text-decoration: line-through;
+  color: var(--gray-500);
+}
+.pos-line-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.pos-qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.pos-qty span {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.pos-prev summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 8px 0;
+}
+.pos-round + .pos-round {
+  border-top: 1px dashed var(--gray-200);
+  padding-top: 12px;
+}
+.pos-fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Tablet: keep menu + cart side by side, narrower cart */
+@media (max-width: 1024px) {
+  .pos-layout {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 16px;
+  }
+  .pos-items {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .pos-layout {
+    grid-template-columns: 1fr;
+  }
+  .pos-cart {
+    position: static;
+    max-height: none;
+  }
+}

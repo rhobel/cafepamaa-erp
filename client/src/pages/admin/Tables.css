@@ -1,0 +1,83 @@
+/* Table cards (moodboard .t), prefixed to avoid clashing with .stat .t */
+.tgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+.tcard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 104px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-md);
+  padding: 12px;
+  background: var(--white);
+  box-shadow: var(--shadow-xs);
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+button.tcard:hover {
+  border-color: var(--gray-300);
+  box-shadow: var(--shadow-sm);
+}
+button.tcard:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+}
+.tcard b {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
+}
+.tcard small {
+  display: block;
+  color: var(--gray-500);
+  font-size: 12px;
+  margin-top: 6px;
+}
+.tcard .skeleton {
+  width: 60%;
+}
+.tcard.busy {
+  border-color: #f5c2c2;
+}
+.tcard.bill {
+  border-color: var(--brand);
+  background: var(--brand-50);
+}
+.tcard.off {
+  background: var(--gray-50);
+  color: var(--gray-500);
+  border-style: dashed;
+}
+.tempty {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.tempty p {
+  margin: 0;
+}
+.modal-foot .grow {
+  flex: 1;
+}
+@media (max-width: 768px) {
+  .tgrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+  .tcard {
+    min-height: 112px;
+  }
+}
+div.tcard {
+  cursor: default;
+}
+button.tcard:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

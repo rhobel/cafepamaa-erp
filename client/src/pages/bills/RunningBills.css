@@ -1,0 +1,11 @@
+.rb-stats {
+  margin-bottom: 16px;
+}
+.rb-customer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.rb-customer .muted {
+  font-size: 13px;
+}
